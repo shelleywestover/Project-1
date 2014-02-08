@@ -16,9 +16,9 @@ body {
 header, footer {
 	background-color: #333;
 
-	height: 64px;
+	height: 40px;
 
-	line-height: 64px; /* By making the line-height as tall as the header, we vertically center the text */
+	line-height: 40px; /* By making the line-height as tall as the header, we vertically center the text */
 
 	color: #EEE;
 	font-family: 'Raleway', sans-serif;
@@ -45,10 +45,10 @@ main {
 
 video {
 	position: absolute;
-	top: calc(1.5 * 7.525% + 23.3% - (180px / 2));
-	left: calc(50% - 320px / 2);
-	height: 180px;
-	width: 320px;
+	top: calc(1.5 * 7.525% + 30% - (405px / 2));
+	left: calc(50% - 720px / 2);
+	/*height: 180px;*/
+	width: 720px;
 }
 
 #detail {
@@ -56,11 +56,11 @@ video {
 
 	position: absolute;
 	
-	height: 23.3%;
-	top: calc(100% - 23.3% - 7.525%);
+	height: 7.5%;
+	top: calc(100% - 10% - 7.525%);
 
-	left: calc(50% - 320px / 2 - 128px * 1.5);
-	right: calc(50% - 320px / 2 - 128px * 1.5);
+	left: calc(50% - 720px / 2 - 128px * 1.5);
+	right: calc(50% - 720px / 2 - 128px * 1.5);
 }
 
 /* Clever trick to make a triangle with CSS:
@@ -96,12 +96,12 @@ aside {
 }
 
 .right {
-	right: calc(50% - 320px / 2 - 128px * 1.5);
+	right: calc(50% - 720px / 2 - 128px * 1.5);
 	background-color: #555;
 }
 
 .left {
-	left: calc(50% - 320px / 2 - 128px * 1.5);
+	left: calc(50% - 720px / 2 - 128px * 1.5);
 	background-color: #CCC;
 }
 
