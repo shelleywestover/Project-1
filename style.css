@@ -137,6 +137,12 @@ nav ol li {
 	margin: 0;
 }
 
+nav ol li:hover {
+	background-color: gray;
+	transition: 1000ms ease;
+	-webkit-transition: 1000ms ease
+}
+
 .active-waypoint {
 	background-color: #D12121;
 }
