@@ -67,11 +67,10 @@ var next = document.getElementById('next-triangle');
 
 next.onclick = function() {
     // do something...
-    for (i = 0; i < waypoints.length; i++){
-    	scrolled = (i+1)*100;
-    	updateWaypoints();
-    	console.log(scrolled);
+	scrolled = (scrolled % 1000) + 100;
+	console.log("scrolled = " + scrolled);
+	updateWaypoints();
+	console.log(scrolled);
     			
     	
-    }
 };
