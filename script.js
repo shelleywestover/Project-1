@@ -3,7 +3,7 @@ var scrolled = 0; // A variable to keep track of how far we've scrolled.
 var fractionScrolled = scrolled / scrollTotal;
 
 
-// You can read more about the mosuewheel event at https://developer.mozilla.org/en-US/docs/DOM/DOM_event_reference/mousewheel
+// You can read more about the mousewheel event at https://developer.mozilla.org/en-US/docs/DOM/DOM_event_reference/mousewheel
 if (document.addEventListener) {
 	document.addEventListener("mousewheel", MouseWheelHandler, false);
 }
@@ -61,3 +61,17 @@ function MouseWheelHandler(e) {
 	
 	updateWaypoints();
 }
+
+//applying click to next-triangle (based on tip from http://stackoverflow.com/questions/1057416/how-to-make-div-click-able)
+var next = document.getElementById('next-triangle');
+
+next.onclick = function() {
+    // do something...
+    for (i = 0; i < waypoints.length; i++){
+    	scrolled = (i+1)*100;
+    	updateWaypoints();
+    	console.log(scrolled);
+    			
+    	
+    }
+};
