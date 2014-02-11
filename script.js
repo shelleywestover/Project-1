@@ -40,52 +40,65 @@ function updateWaypoints() {
 	// adds text to top left aside when scrolled reaches 200
 	var topleft = document.getElementsByClassName("left top");
 
-	if (scrolled >= 100 && scrolled < 300){
+	if (scrolled >= 200 && scrolled < 400){
 		topleft[0].innerHTML = "Text appears";
+		topleft[0].setAttribute('style','background-color: #CCC;');
 	} 
 	else {
 	    topleft[0].innerHTML = " ";
+	    topleft[0].setAttribute('style','background-color: gray;');
 	}
 
-	// adds text to bottom left aside when scrolled reaches 400
+	// adds text to bottom left aside when scrolled reaches 300
 	var bottomleft = document.getElementsByClassName("left bottom");
 
-	if (scrolled >= 200 && scrolled < 400){
+	if (scrolled >= 300 && scrolled < 500){
 		bottomleft[0].innerHTML = "Text appears";
+		bottomleft[0].setAttribute('style','background-color: #CCC;');
+
 	} 
 	else {
 	    bottomleft[0].innerHTML = " ";
+	    bottomleft[0].setAttribute('style','background-color: gray;');
 	}
 
-	// adds text to top right aside when scrolled reaches 600
+	// adds text to top right aside when scrolled reaches 500
 	var topright = document.getElementsByClassName("right top");
 
-	if (scrolled >= 400 && scrolled < 600){
+	if (scrolled >= 500 && scrolled < 700){
 		topright[0].innerHTML = "Text appears";
+		topright[0].setAttribute('style','background-color: #555;');
+
 	} 
 	else {
 	    topright[0].innerHTML = " ";
+	    topright[0].setAttribute('style','background-color: gray;');
 	}
 
-	// adds text to bottom right aside when scrolled reaches 800
+	// adds text to bottom right aside when scrolled reaches 600
 	var bottomright = document.getElementsByClassName("right bottom");
 
-	if (scrolled >= 500 && scrolled < 700){
+	if (scrolled >= 600 && scrolled < 800){
 		bottomright[0].innerHTML = "Text appears";
+		bottomright[0].setAttribute('style','background-color: #555;');
 	} 
 	else {
 	    bottomright[0].innerHTML = " ";
+	    bottomright[0].setAttribute('style','background-color: gray;');
 	}
 
-	//adds text to detail section
+/*	//adds text to detail section when scrolled reaches 800
 	var detail = document.getElementById("detail");
 
-	if (scrolled >= 700) {
-		detail.innerHTML = "Text appears";
+	if (scrolled < 800) {
+		detail.innerHTML = " ";
+	    detail.setAttribute('style','background-color: gray;');
 	}
 	else {
-		detail.innerHTML = " ";
-	}
+		detail.innerHTML = "Text appears";
+		detail.setAttribute('style','background-color: #AAA;');
+
+	}	*/
 }
 
 function waypointClickHandler(e) {

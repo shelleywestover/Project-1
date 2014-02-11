@@ -100,14 +100,12 @@ aside {
 
 .right {
 	right: calc(50% - 720px / 2 - 128px * 1.5);
-	background-color: #555;
 	transition: 1000ms ease;
 	-webkit-transition: 1000ms ease
 }
 
 .left {
 	left: calc(50% - 720px / 2 - 128px * 1.5);
-	background-color: #CCC;
 	transition: 1000ms ease;
 	-webkit-transition: 1000ms ease
 }
