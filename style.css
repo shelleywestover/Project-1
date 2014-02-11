@@ -140,12 +140,14 @@ nav ol li {
 nav ol li:hover {
 	background-color: gray;
 	transition: 1000ms ease;
-	-webkit-transition: 1000ms ease
+	-webkit-transition: 1000ms ease;
 }
 
 
 .active-waypoint {
 	background-color: #D12121;
+	transition: 1000ms ease;
+	-webkit-transition: 1000ms ease
 }
 
 li div {
