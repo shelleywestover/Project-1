@@ -8,7 +8,6 @@ if (document.addEventListener) {
 	document.addEventListener("mousewheel", MouseWheelHandler, false);
 }
 
-
 var waypoints = document.getElementsByClassName('waypoint');
 for (i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
@@ -37,6 +36,56 @@ function updateWaypoints() {
 
 	// Seek to the proportional time of the 38s clip of Bey's "Countdown"
 	document.getElementById('Countdown').currentTime = fractionScrolled * 136.0;
+
+	// adds text to top left aside when scrolled reaches 200
+	var topleft = document.getElementsByClassName("left top");
+
+	if (scrolled >= 100 && scrolled < 300){
+		topleft[0].innerHTML = "Text appears";
+	} 
+	else {
+	    topleft[0].innerHTML = " ";
+	}
+
+	// adds text to bottom left aside when scrolled reaches 400
+	var bottomleft = document.getElementsByClassName("left bottom");
+
+	if (scrolled >= 200 && scrolled < 400){
+		bottomleft[0].innerHTML = "Text appears";
+	} 
+	else {
+	    bottomleft[0].innerHTML = " ";
+	}
+
+	// adds text to top right aside when scrolled reaches 600
+	var topright = document.getElementsByClassName("right top");
+
+	if (scrolled >= 400 && scrolled < 600){
+		topright[0].innerHTML = "Text appears";
+	} 
+	else {
+	    topright[0].innerHTML = " ";
+	}
+
+	// adds text to bottom right aside when scrolled reaches 800
+	var bottomright = document.getElementsByClassName("right bottom");
+
+	if (scrolled >= 500 && scrolled < 700){
+		bottomright[0].innerHTML = "Text appears";
+	} 
+	else {
+	    bottomright[0].innerHTML = " ";
+	}
+
+	//adds text to detail section
+	var detail = document.getElementById("detail");
+
+	if (scrolled >= 700) {
+		detail.innerHTML = "Text appears";
+	}
+	else {
+		detail.innerHTML = " ";
+	}
 }
 
 function waypointClickHandler(e) {
@@ -57,7 +106,7 @@ function MouseWheelHandler(e) {
 	var rawScrolled = Math.max(-1, Math.min(1, e.wheelDelta));
 	scrolled = Math.min(Math.max(0, scrolled - rawScrolled), scrollTotal);
 
-	document.getElementsByTagName('header')[0].innerHTML = scrolled;
+	//document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	
 	updateWaypoints();
 }
@@ -66,11 +115,11 @@ function MouseWheelHandler(e) {
 var next = document.getElementById('next-triangle');
 
 next.onclick = function() {
-    // do something...
-	scrolled = (scrolled % 1000) + 100;
+    if (scrolled == 0) {
+    	scrolled += 100
+    }
+	scrolled = (scrolled % scrollTotal) + 100;
 	console.log("scrolled = " + scrolled);
 	updateWaypoints();
-	console.log(scrolled);
-    			
-    	
-};
+	console.log(scrolled);  			
+}

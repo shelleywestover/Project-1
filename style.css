@@ -16,9 +16,9 @@ body {
 header, footer {
 	background-color: #333;
 
-	height: 40px;
+	height: 64px;
 
-	line-height: 40px; /* By making the line-height as tall as the header, we vertically center the text */
+	line-height: 64px; /* By making the line-height as tall as the header, we vertically center the text */
 
 	color: #EEE;
 	font-family: 'Raleway', sans-serif;
