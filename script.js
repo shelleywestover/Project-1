@@ -119,7 +119,7 @@ function MouseWheelHandler(e) {
 	var rawScrolled = Math.max(-1, Math.min(1, e.wheelDelta));
 	scrolled = Math.min(Math.max(0, scrolled - rawScrolled), scrollTotal);
 
-	//document.getElementsByTagName('header')[0].innerHTML = scrolled;
+	document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	
 	updateWaypoints();
 }
@@ -131,7 +131,7 @@ next.onclick = function() {
     if (scrolled == 0) {
     	scrolled += 100
     }
-	scrolled = (scrolled % scrollTotal) + 100;
+	scrolled = Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
 	console.log("scrolled = " + scrolled);
 	updateWaypoints();
 	console.log(scrolled);  			
