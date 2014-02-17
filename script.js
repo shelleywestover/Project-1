@@ -105,17 +105,19 @@ function updateWaypoints() {
 
 function waypointClickHandler(e) {
 	console.log('click');
-	//var current = scrolled
-    //console.log("current = " + current);
+	var current = scrolled
+    console.log("current = " + current);
 
 	for (i = 0; i < waypoints.length; i++) {
 		if (waypoints[i] === this) {
 			scrolled = (i+1)*100;
 			updateWaypoints();
+			document.getElementsByTagName('header')[0].innerHTML = scrolled;
+
 			console.log(scrolled);
 		}
 	}
-   /* var next = this //Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
+   var next = this //Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
 	console.log("next = " + next);
 	
 	//add delay to for look (http://stackoverflow.com/questions/10058753/how-to-create-pause-or-delay-in-for-loop)
@@ -130,7 +132,7 @@ function waypointClickHandler(e) {
 			console.log("scrolled =" + scrolled)
 		}
 	}
-	if (next < current) {
+	/*if (next < current) {
 		for (var i = next; i < current; i++) {
 				console.log("before")
 				scrolled -= 1;
@@ -140,7 +142,7 @@ function waypointClickHandler(e) {
 				console.log("after")    
 				console.log("scrolled =" + scrolled)
 			}
-	} */
+	}*/
 		
 }
 
