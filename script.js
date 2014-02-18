@@ -105,7 +105,6 @@ function updateWaypoints() {
 
 function waypointClickHandler(e) {
 	console.log('click');
-	var current = scrolled
     console.log("current = " + current);
 
 	for (i = 0; i < waypoints.length; i++) {
@@ -117,21 +116,28 @@ function waypointClickHandler(e) {
 			console.log(scrolled);
 		}
 	}
-   var next = this //Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
+   var next = Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
 	console.log("next = " + next);
 	
 	//add delay to for look (http://stackoverflow.com/questions/10058753/how-to-create-pause-or-delay-in-for-loop)
-	if (next > current) {
-		for (var i = current; i < next; i++) {
-			console.log("before")
-			scrolled += 1;
-			window.setTimeout(function(){
-				updateWaypoints();
-				}, 1000);
-			console.log("after")    
-			console.log("scrolled =" + scrolled)
+	var current = scrolled;
+
+	console.log("current & next " + current + ", " + next)
+
+	var nIntervId = setInterval(updatePlayhead, 136);
+
+
+	function updatePlayhead() {
+		document.getElementById('Countdown').currentTime += 0.136;
+		if (next > current) {
+			current+=1;
+			console.log("current =" +current)
+		}
+		else {
+			clearInterval(nIntervId);
 		}
 	}
+	
 	/*if (next < current) {
 		for (var i = next; i < current; i++) {
 				console.log("before")
