@@ -89,19 +89,21 @@ function updateWaypoints() {
 	    bottomright[0].setAttribute('style','background-color: gray;');
 	}
 
-/*	//adds text to detail section when scrolled reaches 800
+	//adds text to detail section when scrolled reaches 800
 	var detail = document.getElementById("detail");
 
 	if (scrolled < 800) {
 		detail.innerHTML = " ";
 	    detail.setAttribute('style','background-color: gray;');
-	}
+	} 
 	else {
+		console.log("In else condition");
 		detail.innerHTML = "Text appears";
-		detail.setAttribute('style','background-color: #AAA;');
-
-	}	*/
+		detail.setAttribute('style','background-color: #AAA;height: 15%;');
+	}
 }
+
+var nIntervId;
 
 function waypointClickHandler(e) {
 	console.log('click');
@@ -119,12 +121,15 @@ function waypointClickHandler(e) {
    var next = Math.ceil(((scrolled % scrollTotal) + 100)/100) * 100;
 	console.log("next = " + next);
 	
-	//add delay to for look (http://stackoverflow.com/questions/10058753/how-to-create-pause-or-delay-in-for-loop)
+	//play video between waypoints and add delay using setInterval
 	var current = scrolled;
 
 	console.log("current & next " + current + ", " + next)
 
-	var nIntervId = setInterval(updatePlayhead, 136);
+	if (nIntervId){
+		clearInterval(nIntervId);
+	}
+	nIntervId = setInterval(updatePlayhead, 136);
 
 
 	function updatePlayhead() {
@@ -135,21 +140,9 @@ function waypointClickHandler(e) {
 		}
 		else {
 			clearInterval(nIntervId);
+			nIntervId = null;
 		}
 	}
-	
-	/*if (next < current) {
-		for (var i = next; i < current; i++) {
-				console.log("before")
-				scrolled -= 1;
-				window.setTimeout(function(){
-					updateWaypoints();
-					}, 1000);
-				console.log("after")    
-				console.log("scrolled =" + scrolled)
-			}
-	}*/
-		
 }
 
 
